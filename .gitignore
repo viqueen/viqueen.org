@@ -7,5 +7,6 @@ coverage/
 
 .env
 
+.firebase
 .firebaserc
 firebase-debug.log
