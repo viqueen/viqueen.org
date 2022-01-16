@@ -1,3 +1,5 @@
+import viqueenIcon from './assets/viqueen-icon.png';
+
 export type SiteProperties = {
     title: string;
     iconUrl: string;
@@ -5,7 +7,7 @@ export type SiteProperties = {
 };
 
 export const siteProperties: SiteProperties = {
-    title: 'confluence-site-generator',
-    iconUrl: '',
-    contentTitlePrefix: ''
+    title: 'viqueen.org',
+    iconUrl: viqueenIcon,
+    contentTitlePrefix: '/vi - '
 };

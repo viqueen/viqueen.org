@@ -1,10 +1,17 @@
 import {
     AtlassianNavigation,
     CustomProductHome,
+    generateTheme,
     PrimaryButton
 } from '@atlaskit/atlassian-navigation';
 import React from 'react';
 import { siteProperties } from './properties';
+
+const theme = generateTheme({
+    name: 'high-contrast',
+    backgroundColor: '#272727',
+    highlightColor: '#E94E34'
+});
 
 const ConfluenceSiteHome = () => {
     return (
@@ -33,6 +40,7 @@ export default function Navigation() {
             label={siteProperties.title}
             primaryItems={[<HomeLink />]}
             renderProductHome={ConfluenceSiteHome}
+            theme={theme}
         />
     );
 }
