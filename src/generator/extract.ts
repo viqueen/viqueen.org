@@ -1,9 +1,8 @@
 import { environment } from './config';
-import api from './confluence/api';
 import path from 'path';
 import fs from 'fs';
-import extractPageTree from './extract-page-tree';
-import extractBlogs from './extract-blogs';
+import extractSpace from './extract-space';
+import setupOutputDirectories from './setup-output-directories';
 
 export interface OutputDirectories {
     notes: string;
@@ -15,39 +14,19 @@ export interface OutputDirectories {
     assets: { avatars: string };
 }
 
-const targetOutput = path.resolve(__dirname, '../../dist');
-const siteOutput = path.resolve(targetOutput, 'site');
-const outputDirectories: OutputDirectories = {
-    articles: path.resolve(siteOutput, 'articles'),
-    assets: {
-        avatars: path.resolve(siteOutput, 'assets', 'avatars')
-    },
-    attachments: path.resolve(siteOutput, 'attachments'),
-    home: siteOutput,
-    notes: path.resolve(siteOutput, 'notes'),
-    objectResolver: path.resolve(siteOutput, 'object-resolver'),
-    templates: path.resolve(targetOutput, 'templates')
-};
+// setup output directories
 
-Object.values(outputDirectories)
-    .filter((item) => typeof item === 'string')
-    .forEach((directory) => fs.mkdirSync(directory, { recursive: true }));
-fs.mkdirSync(outputDirectories.assets.avatars, { recursive: true });
+const targetOutput = path.resolve(__dirname, '../../dist');
+const outputDirectories: OutputDirectories =
+    setupOutputDirectories(targetOutput);
+
+// extract content from confluence
 
 const extract = async () => {
-    console.info(
-        `🎬 action : extract confluence ${environment.CONFLUENCE_SPACE} space content`
-    );
-    const homePage = await api.getSpaceHomepage();
-    console.info(`🏠 processing space home: `, homePage);
-    await extractPageTree(homePage.id, outputDirectories, true);
-    await extractBlogs(outputDirectories);
+    const sourceSpace = environment.CONFLUENCE_SPACE;
+    await extractSpace(sourceSpace, outputDirectories);
 };
 
 extract()
-    .then(() => {
-        console.info('✅ done : extract');
-    })
-    .catch((error) => {
-        console.error(error);
-    });
+    .then(() => console.info('✅ done : extract'))
+    .catch((error) => console.error(error));
