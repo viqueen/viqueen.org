@@ -3,6 +3,7 @@ import { Content } from './confluence/api';
 import { environment } from './config';
 
 const StaticWrapper = (content: Content) => {
+    const GA_TRACKING_ID = 'G-3VE6NHBCVY';
     return (
         <html lang="en">
             <head>
@@ -17,6 +18,22 @@ const StaticWrapper = (content: Content) => {
                 <meta name="twitter:title" content={content.identifier.title} />
                 <meta name="twitter:description" content={content.excerpt} />
                 <title>{content.identifier.title}</title>
+
+                <script
+                    async
+                    src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+                />
+
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}');
+          `
+                    }}
+                />
             </head>
             <body>
                 <div id="root" />
