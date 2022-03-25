@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run extract:data && npm run site:generate",
     "extract:data:watch": "nodemon --config nodemon-generator.json",
-    "extract:data": "ts-node ./src/generator/extract.ts",
+    "site:extract": "ts-node ./src/generator/extract.ts",
     "site:watch": "webpack serve",
     "site:generate": "webpack --config webpack.config.js",
     "site:firebase:serve": "firebase serve --port 9000",
