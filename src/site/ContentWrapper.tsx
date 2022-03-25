@@ -34,7 +34,7 @@ export default function ContentWrapper() {
                     style={{
                         overflowY: 'auto',
                         height: '90vh',
-                        paddingBottom: 60
+                        padding: '2em'
                     }}
                 >
                     <ContentRenderer content={content} />
