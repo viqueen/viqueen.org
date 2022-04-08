@@ -25,7 +25,8 @@ const rewriteUrl = (url: string): string => {
 };
 
 const titleToPath = (title: string): string => {
-    return title.replace(/\s+/g, '-');
+    const noSpaces = title.replace(/\s+/g, '-');
+    return noSpaces.replace(/[,?]/g, '');
 };
 
 export { rewriteUrl, titleToPath };
