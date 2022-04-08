@@ -10,6 +10,7 @@ export interface Attachment {
     fileId: string;
     downloadUrl: string;
     mediaType: string;
+    isCover: boolean;
 }
 
 export interface AttachmentData {
@@ -26,6 +27,7 @@ export interface Content {
     children: Array<Identifier>;
     ancestors: Array<Identifier>;
     attachments: Array<Attachment>;
+    cover?: Attachment;
     adfBody: any;
     asHomepage: boolean;
 }
@@ -104,7 +106,7 @@ class Api {
         const contentExpansions = [
             'content.body.atlas_doc_format',
             'content.children.page',
-            'content.children.attachment',
+            'content.children.attachment.metadata.labels',
             'content.ancestors',
             'content.history'
         ];
@@ -124,6 +126,15 @@ class Api {
                 const parentPages = ancestors || [];
                 const files = children.attachment?.results || [];
 
+                const attachments = files.map(({ extensions, _links, metadata }: any) => ({
+                    fileId: extensions.fileId,
+                    downloadUrl: _links.download,
+                    mediaType: extensions.mediaType,
+                    isCover: metadata.labels.results.some((i: any) => i.name === 'cover')
+                }));
+
+                const cover = attachments.find((a: Attachment) => a.isCover);
+
                 return {
                     identifier: { id, title },
                     asHomepage,
@@ -140,11 +151,8 @@ class Api {
                     children: childPages.map(identifier),
                     ancestors: parentPages.map(identifier),
                     adfBody: JSON.parse(body.atlas_doc_format.value),
-                    attachments: files.map(({ extensions, _links }: any) => ({
-                        fileId: extensions.fileId,
-                        downloadUrl: _links.download,
-                        mediaType: extensions.mediaType
-                    }))
+                    attachments,
+                    cover
                 };
             });
     }
