@@ -1,7 +1,7 @@
 {
-  "name": "confluence-site-generator",
+  "name": "viqueen-org",
   "version": "1.0.0",
-  "description": "confluence site generator",
+  "description": "viqueen.org",
   "scripts": {
     "build": "tsc --watch",
     "ci:build": "tsc",
@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/viqueen/confluence-site-generator.git"
+    "url": "git+ssh://git@github.com/viqueen/viqueen.org.git"
   },
   "keywords": [
     "confluence",
@@ -30,9 +30,9 @@
   "author": "Hasnae R.",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/viqueen/confluence-site-generator/issues"
+    "url": "https://github.com/viqueen/viqueen.org/issues"
   },
-  "homepage": "https://github.com/viqueen/confluence-site-generator#readme",
+  "homepage": "https://github.com/viqueen/viqueen.org#readme",
   "devDependencies": {
     "@types/node": "^17.0.12",
     "@types/react": "^17.0.38",
