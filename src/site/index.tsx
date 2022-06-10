@@ -1,5 +1,5 @@
 import { fontFamily } from '@atlaskit/theme';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { render, hydrate } from 'react-dom';
 import ContentWrapper from './ContentWrapper';
 import Navigation from './Navigation';

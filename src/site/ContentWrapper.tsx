@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Spinner from '@atlaskit/spinner';
-import axios from 'axios';
 import ContentRenderer from './content/ContentRenderer';
 import ContentWithMetadata from './ContentWithMetadata';
 import { Content } from 'confluence-content-extractor/dist/confluence/api';
