@@ -1,4 +1,4 @@
-name: node-project Test
+name: viqueen.org Test
 on:
   push:
     branches:
