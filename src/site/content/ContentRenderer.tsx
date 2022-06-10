@@ -12,15 +12,17 @@ interface ContentRendererProps {
 
 export default function ContentRenderer({ content }: ContentRendererProps) {
     return (
-        <Provider client={new SimpleCardClient()}>
-            <IntlProvider locale="en">
-                <ReactRenderer
-                    document={content.adfBody}
-                    allowDynamicTextSizing={true}
-                    allowCopyToClipboard={false}
-                    extensionHandlers={extensionHandlers(content)}
-                />
-            </IntlProvider>
-        </Provider>
+        <div>
+            <Provider client={new SimpleCardClient()}>
+                <IntlProvider locale="en">
+                    <ReactRenderer
+                        document={content.adfBody}
+                        allowDynamicTextSizing={true}
+                        allowCopyToClipboard={false}
+                        extensionHandlers={extensionHandlers(content)}
+                    />
+                </IntlProvider>
+            </Provider>
+        </div>
     );
 }

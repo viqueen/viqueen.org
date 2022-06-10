@@ -15,6 +15,7 @@ import {
     Content,
     Identifier
 } from 'confluence-content-extractor/dist/confluence/api';
+import ContentCover from './content/ContentCover';
 
 interface ContentWithMetadataProps {
     content: Content;
@@ -90,6 +91,7 @@ export default function ContentWithMetadata({
             <Ancestors content={content} />
             <Page>
                 <Grid layout="fixed">
+                    {content.cover && <ContentCover {...content.cover} />}
                     <GridColumn medium={12}>
                         <div className="content-header">
                             <ContentTypeLogo type={content.type} />
