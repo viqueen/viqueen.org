@@ -25,34 +25,55 @@ const ConfluenceSiteHome = () => {
     );
 };
 
-const HomeLink = () => {
+const HomeLink = ({ homePage }: { homePage: boolean }) => {
     return (
         <a href="/" style={{ textDecoration: 'none' }}>
-            <PrimaryButton isHighlighted={true}>
+            <PrimaryButton isHighlighted={homePage}>
                 {siteProperties.title}
             </PrimaryButton>
         </a>
     );
 };
 
-const SiteLink = ({ title, href }: Identifier & { href: string }) => {
+const SiteLink = ({
+    title,
+    href,
+    id,
+    set
+}: Identifier & { href: string; set: Set<string> }) => {
     return (
         <a href={href} style={{ textDecoration: 'none' }}>
-            <PrimaryButton>{title}</PrimaryButton>
+            <PrimaryButton isHighlighted={set.has(id)}>{title}</PrimaryButton>
         </a>
     );
 };
 
 type NavigationProps = {
     siteLinks: (Identifier & { href: string })[];
+    homePage: boolean;
+    ancestors: Identifier[];
+    currentContent: Identifier | undefined;
 };
 
-export default function Navigation({ siteLinks }: NavigationProps) {
-    const links = siteLinks.map(SiteLink);
+export default function Navigation({
+    siteLinks,
+    homePage,
+    ancestors,
+    currentContent
+}: NavigationProps) {
+    const set = ancestors.reduce(
+        (prev, current) => prev.add(current.id),
+        currentContent
+            ? new Set<string>([currentContent.id])
+            : new Set<string>()
+    );
+    const links = siteLinks.map((link) => (
+        <SiteLink title={link.title} href={link.href} id={link.id} set={set} />
+    ));
     return (
         <AtlassianNavigation
             label={siteProperties.title}
-            primaryItems={[<HomeLink />, ...links]}
+            primaryItems={[<HomeLink homePage={homePage} />, ...links]}
             renderProductHome={ConfluenceSiteHome}
             theme={theme}
         />

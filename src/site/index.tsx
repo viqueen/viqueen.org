@@ -53,7 +53,13 @@ const Main = () => {
                 fontFamily: fontFamily()
             }}
         >
-            <Navigation siteLinks={navlinks} key={navlinks.length} />
+            <Navigation
+                siteLinks={navlinks}
+                key={navlinks.length}
+                homePage={!!content?.asHomepage || content?.type === 'blogpost'}
+                currentContent={content?.identifier}
+                ancestors={content?.ancestors || []}
+            />
             <ContentWrapper loading={loading} content={content} />
         </div>
     );
