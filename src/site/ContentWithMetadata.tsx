@@ -11,7 +11,10 @@ import ContentRenderer from './content/ContentRenderer';
 import Avatar from '@atlaskit/avatar';
 import { colorPalette } from '@atlaskit/theme/color-palettes';
 import { Date } from '@atlaskit/date';
-import {Content, Identifier} from "confluence-content-extractor/dist/confluence/api";
+import {
+    Content,
+    Identifier
+} from 'confluence-content-extractor/dist/confluence/api';
 
 interface ContentWithMetadataProps {
     content: Content;

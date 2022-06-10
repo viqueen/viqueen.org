@@ -14,23 +14,25 @@ define the following environment properties
 
 ### run it
 
-* extract and generate
+- extract and generate
+
 ```bash
 npm run site:extract
 npm run site:generate
 ```
 
-* preview
+- preview
+
 ```bash
 npm run site:firebase:serve
 npm run site:firebase:preview
 ```
 
-* deploy
+- deploy
+
 ```bash
 npm run site:firebase:deploy
 ```
-
 
 ---
 
