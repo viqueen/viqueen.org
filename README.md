@@ -18,6 +18,7 @@ define the following environment properties
 
 ```bash
 npm run site:extract
+npm run site:prepare
 npm run site:generate
 ```
 
