@@ -1,6 +1,7 @@
 import { fontFamily } from '@atlaskit/theme';
 import React, { useEffect, useState } from 'react';
 import { render, hydrate } from 'react-dom';
+import { IntlProvider } from 'react-intl';
 import ContentWrapper from './ContentWrapper';
 import Navigation from './Navigation';
 import {
@@ -60,14 +61,23 @@ const Main = () => {
                 currentContent={content?.identifier}
                 ancestors={content?.ancestors || []}
             />
+
             <ContentWrapper loading={loading} content={content} />
         </div>
     );
 };
 
+const WithLocale = () => {
+    return (
+        <IntlProvider locale="en">
+            <Main />
+        </IntlProvider>
+    );
+};
+
 const rootElm = document.querySelector('#root')!;
 if (rootElm.hasChildNodes()) {
-    hydrate(<Main />, rootElm);
+    hydrate(<WithLocale />, rootElm);
 } else {
-    render(<Main />, rootElm);
+    render(<WithLocale />, rootElm);
 }

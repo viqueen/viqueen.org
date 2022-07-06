@@ -38,7 +38,6 @@ const extensionHandlers = (content: Content) => {
         },
         'org.viqueen.media': (ext: ExtensionParams<any>, doc: object) => {
             if (ext.extensionKey === 'file') {
-                console.log(ext);
                 const layout = ext.parameters.layout;
                 const attrs = ext.parameters.data[0].attrs;
                 return (

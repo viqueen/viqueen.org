@@ -3,7 +3,6 @@ import { Provider } from '@atlaskit/smart-card';
 import { ReactRenderer } from '@atlaskit/renderer';
 import SimpleCardClient from './SimpleCardClient';
 import { extensionHandlers } from './extensions';
-import { IntlProvider } from 'react-intl';
 import { Content } from 'confluence-content-extractor/dist/confluence/api';
 
 interface ContentRendererProps {
@@ -14,14 +13,12 @@ export default function ContentRenderer({ content }: ContentRendererProps) {
     return (
         <div>
             <Provider client={new SimpleCardClient()}>
-                <IntlProvider locale="en">
-                    <ReactRenderer
-                        document={content.adfBody}
-                        allowDynamicTextSizing={true}
-                        allowCopyToClipboard={false}
-                        extensionHandlers={extensionHandlers(content)}
-                    />
-                </IntlProvider>
+                <ReactRenderer
+                    document={content.adfBody}
+                    allowDynamicTextSizing={true}
+                    allowCopyToClipboard={false}
+                    extensionHandlers={extensionHandlers(content)}
+                />
             </Provider>
         </div>
     );

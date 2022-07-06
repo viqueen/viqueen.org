@@ -1,5 +1,6 @@
 import React from 'react';
 import Spinner from '@atlaskit/spinner';
+import { IntlProvider } from 'react-intl';
 import ContentRenderer from './content/ContentRenderer';
 import ContentWithMetadata from './ContentWithMetadata';
 import { Content } from 'confluence-content-extractor/dist/confluence/api';
