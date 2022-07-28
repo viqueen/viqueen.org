@@ -5,6 +5,7 @@ import BlogPostsMacro from './BlogPostsMacro';
 import MediaFile from './MediaFile';
 import ProfilePicture from './ProfilePicture';
 import { Content } from 'confluence-content-extractor/dist/confluence/api';
+import WidgetConnectorMacro from './WidgetConnectorMacro';
 
 const extensionHandlers = (content: Content) => {
     return {
@@ -25,6 +26,12 @@ const extensionHandlers = (content: Content) => {
                         <ProfilePicture
                             accountId={ext.parameters.macroParams.User.value}
                             size={ext.parameters.macroParams.Size.value}
+                        />
+                    );
+                case 'widget':
+                    return (
+                        <WidgetConnectorMacro
+                            url={ext.parameters.macroParams.url.value}
                         />
                     );
                 default:
