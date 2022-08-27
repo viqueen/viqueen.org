@@ -4,6 +4,7 @@ import { ReactRenderer } from '@atlaskit/renderer';
 import SimpleCardClient from './SimpleCardClient';
 import { extensionHandlers } from './extensions';
 import { Content } from 'confluence-content-extractor/dist/confluence/api';
+import { dataProviders } from './providers';
 
 interface ContentRendererProps {
     content: Content;
@@ -18,6 +19,7 @@ export default function ContentRenderer({ content }: ContentRendererProps) {
                     allowDynamicTextSizing={true}
                     allowCopyToClipboard={false}
                     extensionHandlers={extensionHandlers(content)}
+                    dataProviders={dataProviders()}
                 />
             </Provider>
         </div>
