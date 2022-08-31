@@ -10,8 +10,8 @@ import { Identifier } from 'confluence-content-extractor/dist/confluence/api';
 
 const theme = generateTheme({
     name: 'high-contrast',
-    backgroundColor: '#272727',
-    highlightColor: '#E94E34'
+    backgroundColor: siteProperties.backgroundColor,
+    highlightColor: siteProperties.highlightColor
 });
 
 const ConfluenceSiteHome = () => {

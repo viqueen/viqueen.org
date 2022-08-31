@@ -16,7 +16,7 @@ const htmlPlugins = indexFiles.map((template) => {
     return new HtmlWebpackPlugin({
         template,
         filename,
-        favicon: path.resolve(siteSources, 'assets', 'viqueen-icon.png'),
+        favicon: path.resolve(siteSources, 'assets', 'logo', '8.png'),
     });
 });
 
