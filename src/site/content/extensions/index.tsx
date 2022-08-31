@@ -35,7 +35,7 @@ const extensionHandlers = (content: Content) => {
                         />
                     );
                 default:
-                    console.log(
+                    console.warn(
                         '** missing extension handler: ',
                         ext.extensionKey,
                         ext
@@ -44,20 +44,23 @@ const extensionHandlers = (content: Content) => {
             }
         },
         'org.viqueen.media': (ext: ExtensionParams<any>, doc: object) => {
-            if (ext.extensionKey === 'file') {
-                const layout = ext.parameters.layout;
-                const attrs = ext.parameters.data[0].attrs;
-                return (
-                    <MediaFile
-                        fileId={attrs.id}
-                        width={attrs.width}
-                        height={attrs.height}
-                        layout={layout}
-                    />
+            if (ext.extensionKey !== 'file') {
+                console.warn(
+                    '** missing media extension handler',
+                    ext.extensionKey
                 );
+                return null;
             }
-            console.warn('** missing extension handler: ', ext.extensionKey);
-            return null;
+            const layout = ext.parameters.layout;
+            const attrs = ext.parameters.data[0].attrs;
+            return (
+                <MediaFile
+                    fileId={attrs.id}
+                    width={attrs.width}
+                    height={attrs.height}
+                    layout={layout}
+                />
+            );
         }
     };
 };

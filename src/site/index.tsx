@@ -61,7 +61,6 @@ const Main = () => {
                 currentContent={content?.identifier}
                 ancestors={content?.ancestors || []}
             />
-
             <ContentWrapper loading={loading} content={content} />
         </div>
     );

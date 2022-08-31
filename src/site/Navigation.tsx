@@ -1,8 +1,8 @@
 import {
     AtlassianNavigation,
     CustomProductHome,
-    generateTheme,
-    PrimaryButton
+    PrimaryButton,
+    generateTheme
 } from '@atlaskit/atlassian-navigation';
 import React from 'react';
 import { siteProperties } from './properties';

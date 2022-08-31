@@ -16,8 +16,7 @@ export default function ContentRenderer({ content }: ContentRendererProps) {
             <Provider client={new SimpleCardClient()}>
                 <ReactRenderer
                     document={content.adfBody}
-                    allowDynamicTextSizing={true}
-                    allowCopyToClipboard={false}
+                    allowCopyToClipboard={true}
                     extensionHandlers={extensionHandlers(content)}
                     dataProviders={dataProviders()}
                 />
