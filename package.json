@@ -6,6 +6,7 @@
     "site:env": "confsite env",
     "site:config": "confsite config",
     "site:extract": "confsite extract public",
+    "site:extract:emojis": "confsite extract-emojis public",
     "site:build": "confsite build public --assets ./assets",
     "site:firebase:serve": "firebase serve --port 9000",
     "site:firebase:preview": "firebase hosting:channel:deploy",
@@ -35,6 +36,7 @@
   "homepage": "https://github.com/viqueen/viqueen.org#readme",
   "devDependencies": {
     "confluence-static-site-builder": "^1.0.0-m11",
+    "firebase-tools": "^11.14.1",
     "prettier": "^2.7.1"
   }
 }

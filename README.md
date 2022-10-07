@@ -8,6 +8,7 @@ built with [confluence-static-site](https://github.com/viqueen/confluence-static
 
 ```bash
 npm run site:extract
+npm run site:extract:emojis
 ```
 
 - build site
