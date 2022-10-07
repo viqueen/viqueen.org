@@ -1,53 +1,31 @@
 ## viqueen.org
 
-built with [confluence-site-generator](https://github.com/viqueen/confluence-site-generator)
-
-### configure it
-
-define the following environment properties
-
-- `CONFLUENCE_SITE` : the Confluence cloud instance you want to generate a site from
-- `CONFLUENCE_USERNAME` : the username to use to consume Confluence APIs
-- `CONFLUENCE_API_TOKEN` : the user personal access token to consume Confluence APIs
-- `CONFLUENCE_SPACE` : the Confluence space you want to generate a site from
-- `TARGET_SITE` : the domain name of where your generated site will be hosted
+built with [confluence-static-site](https://github.com/viqueen/confluence-static-site)
 
 ### run it
 
-- extract and generate
+- extract content
 
 ```bash
 npm run site:extract
-npm run site:prepare
-npm run site:generate
 ```
 
-- preview
+- build site
+
+```bash
+npm run site:build
+npm run site:build -- --serve # preview with webpack-dev-server
+```
+
+- firebase preview
 
 ```bash
 npm run site:firebase:serve
 npm run site:firebase:preview
 ```
 
-- deploy
+- firebase deploy
 
 ```bash
 npm run site:firebase:deploy
-```
-
----
-
-### develop it
-
-- setup git hooks
-
-```bash
-npx husky install
-```
-
-- site
-
-```bash
-npm run site:extract
-npm run site:watch
 ```

@@ -1,0 +1,10 @@
+{
+  "title": "viqueen.org",
+  "iconUrl": "/assets/viqueen-logo.png",
+  "name": "/vi",
+  "theme": {
+    "name": "viqueen.org",
+    "backgroundColor": "rgb(9, 30, 66)",
+    "highlightColor": "rgb(255, 139, 0)"
+  }
+}
