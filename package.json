@@ -36,7 +36,6 @@
   "homepage": "https://github.com/viqueen/viqueen.org#readme",
   "devDependencies": {
     "confluence-static-site": "^1.0.0-m13",
-    "confluence-static-site-builder": "^1.0.0-m11",
     "firebase-tools": "^11.14.1",
     "prettier": "^2.7.1"
   }

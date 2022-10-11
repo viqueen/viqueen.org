@@ -1,7 +1,16 @@
 {
   "hosting": {
     "public": "output/site/public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "output/templates",
+      "assets",
+      "package.json",
+      "package-lock.json",
+      "README.md"
+    ],
     "rewrites": [
       {
         "source": "**",
