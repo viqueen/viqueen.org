@@ -8,7 +8,7 @@
     "site:extract": "confsite extract public",
     "site:extract:emojis": "confsite extract-emojis public",
     "site:build": "confsite build public --assets ./assets",
-    "site:firebase:serve": "firebase serve --port 9000",
+    "site:firebase:local": "firebase emulators:start",
     "site:firebase:preview": "firebase hosting:channel:deploy",
     "site:firebase:deploy": "firebase deploy --only hosting",
     "check-updates": "npm-check-updates -u",
