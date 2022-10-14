@@ -7,6 +7,7 @@
     "site:config": "confsite config",
     "site:extract": "confsite extract public",
     "site:extract:emojis": "confsite extract-emojis public",
+    "site:extract:content": "confsite extract-content public",
     "site:build": "confsite build public --assets ./assets",
     "site:firebase:local": "firebase emulators:start",
     "site:firebase:preview": "firebase hosting:channel:deploy",
