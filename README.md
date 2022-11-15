@@ -21,7 +21,7 @@ npm run site:build -- --serve # preview with webpack-dev-server
 - firebase preview
 
 ```bash
-npm run site:firebase:serve
+npm run site:firebase:local
 npm run site:firebase:preview
 ```
 
