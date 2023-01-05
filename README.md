@@ -2,6 +2,15 @@
 
 built with [confluence-static-site](https://github.com/viqueen/confluence-static-site)
 
+### install it
+
+```bash
+nvm install
+npm install
+
+npx npm-force-resolutions
+```
+
 ### run it
 
 - extract content
