@@ -4,6 +4,8 @@
   "description": "viqueen.org",
   "scripts": {
     "site:env": "confsite env",
+    "site:login": "confsite login",
+    "site:init": "confsite init-site",
     "site:config": "confsite config",
     "site:extract": "confsite extract public",
     "site:extract:emojis": "confsite extract-emojis public",
@@ -41,8 +43,8 @@
   },
   "homepage": "https://github.com/viqueen/viqueen.org#readme",
   "devDependencies": {
-    "confluence-static-site": "^1.0.0-m18",
-    "firebase-tools": "^11.19.0",
+    "confluence-static-site": "^1.0.0-m19",
+    "firebase-tools": "^11.20.0",
     "npm-check-updates": "^16.6.2",
     "prettier": "^2.8.1"
   }

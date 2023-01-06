@@ -13,6 +13,14 @@ npx npm-force-resolutions
 
 ### run it
 
+- setup site
+
+```bash
+npm run site:login
+npm run site:env
+npm run site:init
+```
+
 - extract content
 
 ```bash
