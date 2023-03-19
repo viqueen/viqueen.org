@@ -6,9 +6,7 @@ built with [confluence-static-site](https://github.com/viqueen/confluence-static
 
 ```bash
 nvm install
-npm install
-
-npx npm-force-resolutions
+yarn
 ```
 
 ### run it
@@ -16,34 +14,34 @@ npx npm-force-resolutions
 - setup site
 
 ```bash
-npm run site:login
-npm run site:env
-npm run site:init
+yarn site:login
+yarn site:env
+yarn site:init
 ```
 
 - extract content
 
 ```bash
-npm run site:extract
-npm run site:extract:emojis
+yarn site:extract
+yarn site:extract:emojis
 ```
 
 - build site
 
 ```bash
-npm run site:build
-npm run site:build -- --serve # preview with webpack-dev-server
+yarn site:build
+yarn site:build --serve # preview with webpack-dev-server
 ```
 
 - firebase preview
 
 ```bash
-npm run site:firebase:local
-npm run site:firebase:preview
+yarn site:firebase:local
+yarn site:firebase:preview
 ```
 
 - firebase deploy
 
 ```bash
-npm run site:firebase:deploy
+yarn site:firebase:deploy
 ```
