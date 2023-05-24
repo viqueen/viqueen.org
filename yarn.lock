@@ -3359,10 +3359,10 @@ configstore@^5.0.1:
     write-file-atomic "^3.0.0"
     xdg-basedir "^4.0.0"
 
-confluence-static-site@^1.0.0-m25:
-  version "1.0.0-m25"
-  resolved "https://registry.yarnpkg.com/confluence-static-site/-/confluence-static-site-1.0.0-m25.tgz#d8874b964aa0424225831f49500c728cac1e960a"
-  integrity sha512-T2b1Yq4Mb2mSPi3bnv7ibckQl0yrasE3SL12qfcNy+Vy2pyewaj6a2JdqdEcheJu9qUCixnLyhxNSBW8CU5zeA==
+confluence-static-site@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/confluence-static-site/-/confluence-static-site-1.1.0.tgz#57e49f6779745f729eb629afc47fb0d0a6b7c8fc"
+  integrity sha512-ZXp8+A0Jcv0R28S8tCp0LRn6d9WT4OrKyhY5CmYIyx0EjCP2v1P+SoUcfflg+K78Nm5wD+0TdNsIGTmOUWWpyw==
   dependencies:
     "@atlaskit/atlassian-navigation" "^2.3.5"
     "@atlaskit/breadcrumbs" "^11.7.12"
